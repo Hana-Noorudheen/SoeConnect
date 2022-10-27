@@ -48,10 +48,13 @@
             <div class="flex flex-start w-full pb-3">
                 <p class=" text-2xl font-semibold">Notifications</p>
             </div>
-            
+            {% for noti in notis %}
             <div class="alert alert-primary w-full pt-3" role="alert">
-                This is a primary alert—check it out!
+                <strong>{{ noti.Title }}:</strong>
+                {{ noti.Content }}
               </div>
+
+            {% endfor %}
           
           </div>
           

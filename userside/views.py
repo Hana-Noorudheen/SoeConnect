@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from adminside.models import Students,Requests,File
+from adminside.models import Students,Requests,File,Notification
 # Create your views here.
 
 def index(request):
@@ -45,4 +45,5 @@ def userupload(request):
 
 
 def usernoti(request):
-    return render(request,'User/usernoti.html')
+    notis = Notification.objects.all()
+    return render(request,'User/usernoti.html',{'notis':notis})

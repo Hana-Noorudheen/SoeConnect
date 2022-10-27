@@ -4,7 +4,7 @@ from adminside.models import Students
 # Create your views here.
 
 def index(request):
-    return (render(request,'Admin/index.html'))
+    return (render(request,'User/reg.html'))
 
 
 

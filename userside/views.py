@@ -1,6 +1,6 @@
 
 from django.shortcuts import render,redirect
-from adminside.models import Students
+from adminside.models import Students,Requests,File
 # Create your views here.
 
 def index(request):
@@ -36,7 +36,9 @@ def register(request):
             # return redirect('/user/regSuccess')
 
 def homeuser(request):
-        return (render(request, 'User/homeuser.html'))
+
+    return (render(request, 'User/homeuser.html'))
 
 def userupload(request):
-    return (render(request,'User/userupload.html'))
+    req = Requests.objects.all()
+    return render(request,'User/userupload.html',{'reqs':req})

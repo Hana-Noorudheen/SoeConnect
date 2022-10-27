@@ -10,3 +10,4 @@ def req(request):
 
 def noti(request):
     return (render(request,'abcd/noti.html'))
+

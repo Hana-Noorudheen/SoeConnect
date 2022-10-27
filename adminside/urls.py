@@ -21,4 +21,5 @@ urlpatterns = [
     path('', views.index ,name='index'),
     path('req', views.req ,name='req'),
     path('noti', views.noti ,name='noti'),
+
 ]

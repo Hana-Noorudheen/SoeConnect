@@ -37,3 +37,6 @@ def register(request):
 
 def homeuser(request):
         return (render(request, 'User/homeuser.html'))
+
+def userupload(request):
+    return (render(request,'User/userupload.html'))

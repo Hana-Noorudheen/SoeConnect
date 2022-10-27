@@ -34,3 +34,6 @@ def register(request):
 
             return (render(request, 'User/regSuccess.html'))
             # return redirect('/user/regSuccess')
+
+def homeuser(request):
+        return (render(request, 'User/homeuser.html'))

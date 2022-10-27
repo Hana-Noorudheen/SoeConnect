@@ -42,3 +42,7 @@ def homeuser(request):
 def userupload(request):
     req = Requests.objects.all()
     return render(request,'User/userupload.html',{'reqs':req})
+
+
+def usernoti(request):
+    return render(request,'User/usernoti.html')

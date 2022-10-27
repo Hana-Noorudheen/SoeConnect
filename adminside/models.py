@@ -20,5 +20,7 @@ class File(models.Model):
     StudentNum = models.ForeignKey(Students,on_delete=models.CASCADE, default=False)
     FileType =  models.FileField(upload_to='files',default=None)
 
-
+class Notification(models.Model):
+    Title = models.CharField(max_length=100, default=None)
+    Content = models.TextField()
 

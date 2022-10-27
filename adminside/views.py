@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Requests
+from .models import Requests,Notification
 # Create your views here.
 
 def index(request):
@@ -19,5 +19,16 @@ def req(request):
         return (render(request,'abcd/req.html'))
 
 def noti(request):
-    return (render(request,'abcd/noti.html'))
+    if request.method == 'POST':
+        Title = request.POST['Title']
+        Content = request.POST['Content']
+
+        notif = Notification()
+        notif.Title = Title
+        notif.Content = Content
+        notif.save()
+        return redirect('/home/noti')
+    else:
+        return (render(request,'abcd/noti.html'))
+
 

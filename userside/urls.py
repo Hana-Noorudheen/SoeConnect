@@ -23,4 +23,5 @@ urlpatterns = [
     path('regSuccess', views.register ,name='register'),
     path('homeuser', views.homeuser ,name='homeuser'),
     path('userupload', views.userupload ,name='userupload'),
+    path('usernoti', views.usernoti ,name='usernoti'),
 ]

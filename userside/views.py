@@ -40,3 +40,6 @@ def homeuser(request):
 
 def userupload(request):
     return (render(request,'User/userupload.html'))
+
+def usernoti(request):
+    return (render(request,'User/usernoti.html'))

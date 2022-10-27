@@ -6,6 +6,9 @@ from adminside.models import Students
 def index(request):
     return (render(request,'User/reg.html'))
 
+def regSuccess(request):
+    return (render(request, 'User/regSuccess.html'))
+
 
 
 def register(request):
@@ -27,4 +30,7 @@ def register(request):
 
             user_obj.save()
 
-            return redirect('/user/regSuccess')
+
+
+            return (render(request, 'User/regSuccess.html'))
+            # return redirect('/user/regSuccess')

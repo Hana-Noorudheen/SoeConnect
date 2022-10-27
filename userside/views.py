@@ -4,7 +4,10 @@ from adminside.models import Students
 # Create your views here.
 
 def index(request):
-    return (render(request,'Admin/index.html'))
+    return (render(request,'User/reg.html'))
+
+def regSuccess(request):
+    return (render(request, 'User/regSuccess.html'))
 
 
 
@@ -27,4 +30,10 @@ def register(request):
 
             user_obj.save()
 
-            return redirect('/user/regSuccess')
+
+
+            return (render(request, 'User/regSuccess.html'))
+            # return redirect('/user/regSuccess')
+
+def homeuser(request):
+        return (render(request, 'User/homeuser.html'))

@@ -11,5 +11,9 @@ class Students(models.Model):
     Semester = models.IntegerField(default=None)
     Photo = models.ImageField(upload_to='pics')
 
+class Requests(models.Model):
+    Filename = models.CharField(max_length=100, default=None)
+    Desc = models.TextField()
+
 
 

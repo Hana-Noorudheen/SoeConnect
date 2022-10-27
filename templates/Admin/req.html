@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex">
+        <div class="flex flex-col h-screen w-[300px] bg-indigo-900 justify-center">
+            <div class="flex justify-center">
+                <h3 class="flex fixed top-2 text-gray-100 font-semibold pt-3 text-xl border-b-2">Admin Panel</h3>
+            </div>
+            <div class="flex justify-center m-3">
+                <a href="req"><h2 class="text-gray-100 font-semibold pt-3 text-l">Create Request</h2></a>
+            </div>
+            <div class="flex justify-center m-3">
+                <a href="noti"><h2 class="text-gray-100 font-semibold pt-3 text-l">Notifier</h2></a>
+            </div>
+            <div class="flex justify-center m-3">
+                <h2 class="flex  text-gray-100 font-semibold pt-3 text-l">Logout</h2>
+            </div>
+            
+
+        </div>
+        <div class="flex flex-col item-center w-full pt-3 ">
+            <div class="">
+                <h2 class="flex text-3xl font-semibold justify-center underline border-3 border-black">Division of Computer Science and Engineering</h2>
+
+            </div>
+
+            <div class="flex flex-col  p-10 w-full justify-center   h-full">
+                <p class="text-black font-semibold text-2xl">Send a file Request to Students</p>
+                <div class="max-w-max">
+                    <form class="flex flex-col justify-center p-3">
+                        <div class="form-group  p-2">
+                          <label for="filename">File name</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter File name">
+                        </div>
+                        <div class="form-group p-2">
+                          <label for="exampleInputPassword1">File Type</label>
+                          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter file type (pdf,img)">
+                        </div>
+                        <div class="form-group p-2">
+                            <label for="exampleInputPassword1">Description</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Description">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary bg-indigo-900 text-white ">Submit</button>
+                      </form>
+                </div>
+                
+                  
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

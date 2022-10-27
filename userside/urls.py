@@ -23,5 +23,6 @@ urlpatterns = [
     path('regSuccess', views.register ,name='register'),
     path('homeuser', views.homeuser ,name='homeuser'),
     path('userupload', views.userupload ,name='userupload'),
+    path('userupload/<id>', views.upload ,name='upload'),
     path('usernoti', views.usernoti ,name='usernoti'),
 ]

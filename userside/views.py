@@ -43,6 +43,20 @@ def userupload(request):
     req = Requests.objects.all()
     return render(request,'User/userupload.html',{'reqs':req})
 
+def upload(request,id):
+    if request.method == 'POST':
+        file = File()
+        if len(request.FILES['Filename']) != 0:
+            fileDetails = request.FILES['Filename']
+            file.FileType =fileDetails
+            file.FileNum = id
+            file.StudentNum = 1
+            file.save()
+        return redirect('/user/payment_form')
+    else:
+        req = Requests.objects.get(id=id)
+        return render(request, 'User/upload.html',{'req':req})
+
 
 def usernoti(request):
     notis = Notification.objects.all()

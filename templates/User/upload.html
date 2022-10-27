@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,15 +29,15 @@
                 <h3 class="flex fixed top-2 text-gray-100 font-semibold pt-3 text-xl border-b-2">Candidate ID</h3>
             </div>
             <div class="flex justify-center m-3">
-                <a href="userupload"><h2 class="text-gray-100 font-semibold pt-3 text-l">Upload Files</h2></a>
+                <a href="/user/userupload"><h2 class="text-gray-100 font-semibold pt-3 text-l">Upload Files</h2></a>
             </div>
             <div class="flex justify-center m-3">
-                <a href="usernoti"><h2 class="text-gray-100 font-semibold pt-3 text-l">Notifications</h2></a>
+                <a href="/user/usernoti"><h2 class="text-gray-100 font-semibold pt-3 text-l">Notifications</h2></a>
             </div>
             <div class="flex justify-center m-3">
                 <h2 class="flex  text-gray-100 font-semibold pt-3 text-l">Logout</h2>
             </div>
-          
+
 
         </div>
         <div class="flex flex-col item-center w-full pt-3 ">
@@ -44,31 +46,27 @@
 
           </div>
 
-        <div class="flex  flex-col p-10 w-full justify-center items-center   h-full ">
-            <table class="table table-striped table-light">
-                <thead>
-                  <tr>
-                    <th scope="col">Sl.No</th>
-                    <th scope="col">FileName</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                {% for r in reqs %}
-                  <tr>
-                    <th scope="row">{{ forloop.counter }}</th>
-                    <td>{{ r.Filename }}</td>
-                    <td>{{ r.Desc }}</td>
-                      <td><a href="userupload/{{ r.id }}">upload</a></td>
-                  </tr>
-                {% endfor %}
-                </tbody>
-              </table>
-          
+        <div class="flex  flex-col p-10 w-full  items-center   h-full ">
+            <div class="flex flex-start w-full pb-3">
+                <p class=" text-2xl font-semibold">Notifications</p>
+            </div>
+           <p class=" text-2xl font-semibold">{{ req.Filename }}</p>
+            <div class="mt-5">
+                <form action="/user/userupload/{{ req.id }}" method="post">
+                    {% csrf_token %}
+
+  <label for="formFile" class="form-label">{{ req.Desc }}</label>
+  <input class="form-control" name="Filename" type="file" id="formFile">
+                    <button type="submit" class="btn btn-primary bg-indigo-900 mt-3">Submit</button>
+                    </form>
+</div>
           </div>
-          
-            
+
+
+
+
+
+
       </div>
 
   </div>

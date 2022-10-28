@@ -21,7 +21,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="flex">
+    <div class="flex max-h-[100vh]">
         <div class="flex flex-col h-screen w-[300px] bg-indigo-900 justify-center">
             <div class="flex justify-center">
                 <h3 class="flex fixed top-2 text-gray-100 font-semibold pt-3 text-xl border-b-2">Candidate ID</h3>
@@ -48,13 +48,16 @@
             <div class="flex flex-start w-full pb-3">
                 <p class=" text-2xl font-semibold">Notifications</p>
             </div>
-            {% for noti in notis %}
+            <div class="overflow-y-scroll w-full">
+                {% for noti in notis %}
             <div class="alert alert-primary w-full pt-3" role="alert">
                 <strong>{{ noti.Title }}:</strong>
                 {{ noti.Content }}
               </div>
 
             {% endfor %}
+            </div>
+            
           
           </div>
           

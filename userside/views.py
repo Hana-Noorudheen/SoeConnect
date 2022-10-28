@@ -1,4 +1,5 @@
 
+from audioop import reverse
 from django.shortcuts import render,redirect
 from adminside.models import Students,Requests,File,Notification
 # Create your views here.
@@ -63,4 +64,6 @@ def upload(request,id):
 
 def usernoti(request):
     notis = Notification.objects.all()
+
+    notis = reversed(notis)
     return render(request,'User/usernoti.html',{'notis':notis})

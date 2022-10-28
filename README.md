@@ -19,6 +19,7 @@ Embed video of project demo
 
 ## Technologies used
 List out tech stacks you have used
+Django,HTML,Tailwind CSS,CSS,sqllite
 
 ## How to configure
 Instructions for setting up project

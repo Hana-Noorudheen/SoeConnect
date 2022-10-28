@@ -45,14 +45,17 @@ def userupload(request):
 
 def upload(request,id):
     if request.method == 'POST':
+        print("I am here")
         file = File()
-        if len(request.FILES['Filename']) != 0:
-            fileDetails = request.FILES['Filename']
+        user = Students.objects.get(id=1)
+        file = Requests.objects.get(id=id)
+        if len(request.FILES['jazim']) != 0:
+            fileDetails = request.FILES['jazim']
             file.FileType =fileDetails
             file.FileNum = id
-            file.StudentNum = 1
+            file.StudentNum = user
             file.save()
-        return redirect('/user/payment_form')
+        return redirect('/user/homeuser')
     else:
         req = Requests.objects.get(id=id)
         return render(request, 'User/upload.html',{'req':req})
